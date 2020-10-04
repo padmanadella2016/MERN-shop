@@ -242,3 +242,53 @@ max-height: 10rem;
 .cart-price{
   flex:1 1;
 }
+
+/* sign in screen*/
+
+.form-signin{
+  display: flex;
+  justify-content:space-around;
+}
+ul.form-containersignin {
+  list-style: none;
+  
+}
+.form-containersignin li {
+margin: 20px 0;
+display: flex;
+flex-direction: row;
+  justify-content:space-between;
+}
+
+/* register screen*/
+.form-register{
+  display: flex;
+  justify-content:space-around;
+}
+ul.form-containerregister {
+  list-style: none;
+  
+}
+.form-containerregister li {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+    justify-content:space-between;
+  }
+
+  /* checkout Steps */
+  .checkout-steps{
+    display:flex;
+    justify-content: space-between;
+    width:40rem;
+    margin:1rem auto;
+  }
+  .checkout-steps > div{
+    border-top:.3rem #c0c0c0 solid;
+    color:#c0c0c0;
+    flex:1 1;
+  }
+  .checkout-steps > div.active{
+    border-top:.3rem #f08000 solid;
+    color:#f08000;
+  }

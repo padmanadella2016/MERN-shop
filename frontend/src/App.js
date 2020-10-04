@@ -2,7 +2,12 @@ import React from 'react';
 import HomeScreen from  './screens/HomeScreen';
 import ProductScreen from  './screens/ProductScreen';
 import SigninScreen from  './screens/SigninScreen';
+import ShippingScreen from  './screens/ShippingScreen';
 import CartScreen from './screens/CartScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import  PaymentScreen from './screens/PaymentScreen';
+import OrderScreen from './screens/OrderScreen';
+import OrdersScreen from './screens/OrdersScreen';
 import { useSelector } from 'react-redux';
 import RegisterScreen from './screens/RegisterScreen';
 import  {BrowserRouter,Route,Link}  from 'react-router-dom';
@@ -47,6 +52,11 @@ function App() {
                 <div className="content">
                     <Route path="/signin" component={SigninScreen}/>
                     <Route path="/register" component={RegisterScreen}/>
+                    <Route path="/shipping" component={ShippingScreen}/>
+                    <Route path="/payment" component={ PaymentScreen}/>
+                    <Route path="/orders" component={OrdersScreen} />
+                    <Route path="/order/:id" component={ OrderScreen}/>
+                    <Route path="/placeorder" component={ PlaceOrderScreen}/>
                     <Route path="/product/:id" component={ProductScreen}/>
                     <Route path="/cart/:id?" component={CartScreen}/>
                     <Route path="/" exact={true} component={HomeScreen}/>

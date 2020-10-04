@@ -27,9 +27,9 @@ function RegisterScreen(props) {
     e.preventDefault();
     dispatch(register(name, email, password));
   }
-  return <div className="form">
+  return <div className="form-register">
     <form onSubmit={submitHandler} >
-      <ul className="form-container">
+      <ul className="form-containerregister">
         <li>
           <h2>Create Account</h2>
         </li>
@@ -57,7 +57,7 @@ function RegisterScreen(props) {
           </input>
         </li>
         <li>
-          <label htmlFor="rePassword">Re-Enter Password</label>
+          <label htmlFor="rePassword">Re-Enter Password </label>
           <input type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
           </input>
         </li>
@@ -66,7 +66,7 @@ function RegisterScreen(props) {
         </li>
         <li>
           Already have an account?
-          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Create your MyShop account</Link>
+          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Login </Link>
 
         </li>
 

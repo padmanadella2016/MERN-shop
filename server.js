@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 var path= require('path');
 var multer  = require('multer')
+
 //var upload = multer({dest: path.join('./uploads'),
                                          //});
 global.app = module.exports = express();
@@ -10,6 +12,7 @@ global.app = module.exports = express();
 require('dotenv').config();
 
 const app = express();
+app.use(bodyParser.json());
 const port = process.env.PORT || 5000;
 //app.use(express.static(__dirname+"./uploads/"));
 app.use(cors());

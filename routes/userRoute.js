@@ -1,4 +1,7 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
+const mongoose = require('mongoose');
+var path= require('path');
 let User = require('../models/userModel');
 
 router.route('/').get((req, res) => {
@@ -21,7 +24,7 @@ router.route('/add').post((req, res) =>{
     .catch(err => res.status(400).json('Error:' + err));
 });
 router.post('/signin', async(req, res) =>{
-    const siginUser = await User.findOne({
+    const signinUser = await User.findOne({
         email:req.body.email,
         password:req.body.password
     });
@@ -31,8 +34,7 @@ router.post('/signin', async(req, res) =>{
             name: signinUser.name,
             email: signinUser.email,
             isAdmin: signinUser.isAdmin,
-            token: getToken(signinUser)
-        })
+            })
     }else
     {
         res.status(401).send({msg:'Invalid Email or Password'});
@@ -52,7 +54,7 @@ router.post('/register', async(req, res) =>{
             name: newUser.name,
             email: newUser.email,
             isAdmin: newUser.isAdmin,
-            token: getToken(newUser)
+            
         })
     } else
     {

@@ -14,6 +14,7 @@ function SigninScreen(props) {
   useEffect(() => {
     if (userInfo) {
       props.history.push("/");
+      
     }
     return () => {
       //
@@ -25,11 +26,11 @@ function SigninScreen(props) {
     dispatch(signin(email, password));
 
   }
-  return <div className="form">
+  return <div className="form-signin">
     <form onSubmit={submitHandler} >
-      <ul className="form-container">
+      <ul className="form-containersignin">
         <li>
-          <h2>Sign-In</h2>
+          <h2 className="signin">Sign-In</h2>
         </li>
         <li>
           {loading && <div>Loading...</div>}
